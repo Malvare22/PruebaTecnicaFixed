@@ -1,0 +1,112 @@
+.bg{
+    background: #004AC1;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.logoContainer{
+    padding-left: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.btnsContainer{
+    display: flex;
+    
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    > *{
+        margin: 10px;
+    };
+    button{
+        width: 120px;
+        height: 60px;
+    }
+    
+}
+
+.btn1{
+    background-color: #FFD300;
+    color: #004AC1;
+}
+
+.btn2{
+    color: #FFD300;
+    background: #004AC1;
+    border: none;
+
+}
+
+.icon{
+    fill: black;
+    width: 24px;
+    height: 24px;
+
+}
+
+.iconContainer{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.circleContainer{
+    width: 200px;
+    height: 60px;
+    position: relative;
+}
+
+.circle{
+    background-color: #D2AE00;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    bottom: -70px;
+    left: 20px;
+    
+}
+
+.circleText{
+    > h2{
+        transform: rotate(40deg);
+        position: absolute;
+        bottom: 0px;
+    }
+}
+
+.menu{
+    background-color: #FFFFFF;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.menuOption{
+    font-family: 'Open Sans';
+    color: #2B3445;
+    margin-right: 40px;
+}
+
+.menuOption:hover{
+    font-weight: bolder;
+    color: #013E9B;
+}
