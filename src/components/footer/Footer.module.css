@@ -1,0 +1,51 @@
+.container{
+    height: 450px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.layer1{
+    position: absolute;
+    bottom: 0px;
+    fill: #FFD300;
+    width: 100%;
+    svg{
+
+        width: 100%;
+    }
+}
+
+.layer2{
+    position: absolute;
+    fill: blue;
+    width: 100%;
+    bottom: 0px;
+
+    svg{
+        height: 450px;
+        width: 100%;
+    }
+}
+
+.textContainer{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    z-index: 3;
+    padding: 40px;
+}
+
+.icons{
+    > img{
+        margin: 20px;
+        margin-left: 0;
+    }
+}
+
+.happyFace{
+    svg{
+        fill: #004AC1;
+        width: 120px;
+        height: 120px;
+    }
+}

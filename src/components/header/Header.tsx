@@ -1,8 +1,8 @@
 import styles from './Header.module.css'
 import CSS from "csstype";
-import Logo from '../../assets/header/Logotipo-Macropay.svg'
+import Logo from '../../assets/svg/Logotipo-Macropay.svg'
 import { Button } from 'antd';
-import { Cart } from '../../assets/header/Cart';
+import { Cart } from '../../assets/svg/header/Cart';
 
 
 function Header() {
