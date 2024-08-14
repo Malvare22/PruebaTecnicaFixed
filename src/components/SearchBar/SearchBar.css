@@ -1,0 +1,23 @@
+.searchBarStyles .input{
+    > span{
+        width: 300px;
+        border-radius: 100px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+}
+
+.searchBarStyles .dropMenu .ant-space-item{
+    width: 170px;
+    height: 30px;
+    font-size: 12px;
+    background-color: #7D879C;
+    border-radius: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: #D8E0E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
