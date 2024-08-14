@@ -1,0 +1,321 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 13 Pro",
+      "price": 999.99,
+      "description": "El iPhone 13 Pro presenta una pantalla Super Retina XDR con ProMotion, una cámara avanzada y un chip A15 Bionic.El iPhone 13 Pro presenta una pantalla Super Retina XDR con ProMotion, una cámara avanzada y un chip A15 Bionic.",
+      "discount": 10,
+      "manufacturer": "Apple",
+      "weight": "204g",
+      "dimensions": "146.7 x 71.5 x 7.65 mm",
+      "countryOfOrigin": "China",
+      "modelNumber": "MLVE3LL/A",
+      "color": "Grafito",
+      "material": "Aluminio y Vidrio",
+      "numberOfPieces": 1,
+      "specialFeatures": "5G, Face ID, Sistema de triple cámara, Modo nocturno",
+      "componentsIncluded": "iPhone, Cable USB-C a Lightning, Documentación",
+      "reviews": [
+        {
+          "reviewer": "Juan Pérez",
+          "rating": 5,
+          "comment": "¡Teléfono increíble con un rendimiento excepcional!"
+        },
+        {
+          "reviewer": "Ana Gómez",
+          "rating": 4,
+          "comment": "Gran cámara y pantalla, pero un poco caro."
+        }
+      ],
+      "img": [
+        "https://mac-center.com/cdn/shop/files/iPhone_13_Pro_Sierra_Blue_PDP_Image_position-1A__CLCO_v1_0be180ca-e4c0-4416-9ef7-64245ff7e2e5.jpg?v=1700292348",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDB3Z_Jd_1AI_8LOhL56DW6erzIXadV8q-Sg&s",
+        "https://http2.mlstatic.com/D_NQ_NP_964760-MLA74364782075_022024-O.webp",
+        "https://siliconecasepereira.com/wp-content/uploads/2022/03/Iphone-13-pro-max-blanco-flores.jpg"
+      ],
+      "category": "phone",
+      "sales": 21
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S21 Ultra",
+      "price": 1199.99,
+      "description": "El Galaxy S21 Ultra es el último buque insignia de Samsung con una pantalla Dynamic AMOLED 2X y cámara de 108MP.",
+      "discount": 15,
+      "manufacturer": "Samsung",
+      "weight": "228g",
+      "dimensions": "165.1 x 75.6 x 8.9 mm",
+      "countryOfOrigin": "Corea del Sur",
+      "modelNumber": "SM-G998B/DS",
+      "color": "Negro Fantasma",
+      "material": "Aluminio y Vidrio",
+      "numberOfPieces": 1,
+      "specialFeatures": "5G, S Pen, Cámara cuádruple, Zoom 100x",
+      "componentsIncluded": "Teléfono, Cable USB-C, Herramienta de extracción SIM, Documentación",
+      "reviews": [
+        {
+          "reviewer": "Carlos Martínez",
+          "rating": 4,
+          "comment": "La mejor cámara en un smartphone que he probado."
+        },
+        {
+          "reviewer": "Lucía Fernández",
+          "rating": 4,
+          "comment": "El S Pen es una gran adición, pero es muy caro."
+        }
+      ],
+      "img": [
+        "https://saldos.clevercel.co/cdn/shop/products/samsung-galaxy-s21-ultra-5g-1_7536e874-5a3a-4c36-bcc1-603629a7c04a.jpg?v=1661204977",
+        "https://images.samsung.com/is/image/samsung/p6pim/co/galaxy-s21/gallery/co-galaxy-s21-ultra-5g-g988-sm-g998bzskltc-368317722?$624_624_PNG$",
+        "https://sescol.com/wp-content/uploads/2024/05/Samsung-s21-.-sescol.jpg",
+        "https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2021/01/27/16117672059051.png"
+      ],
+      "category": "phone",
+      "sales": 23
+    },
+    {
+      "id": 3,
+      "name": "OnePlus 9 Pro",
+      "price": 969.99,
+      "description": "El OnePlus 9 Pro cuenta con una pantalla Fluid AMOLED de 120Hz y cámaras co-desarrolladas con Hasselblad.",
+      "discount": 12,
+      "manufacturer": "OnePlus",
+      "weight": "197g",
+      "dimensions": "163.2 x 73.6 x 8.7 mm",
+      "countryOfOrigin": "China",
+      "modelNumber": "LE2123",
+      "color": "Morning Mist",
+      "material": "Aluminio y Vidrio",
+      "numberOfPieces": 1,
+      "specialFeatures": "5G, Warp Charge 65T, Cámara Hasselblad, Pantalla 120Hz",
+      "componentsIncluded": "Teléfono, Cargador Warp Charge 65, Cable USB-C, Documentación",
+      "reviews": [
+        {
+          "reviewer": "Andrea López",
+          "rating": 4,
+          "comment": "Carga súper rápida y excelente pantalla."
+        },
+        {
+          "reviewer": "David Ramírez",
+          "rating": 3,
+          "comment": "Buena cámara, pero el software tiene algunos bugs."
+        }
+      ],
+      "img": [
+        "https://i5.walmartimages.com/asr/345d4c7c-7816-4280-8f5f-568fb7f987b1.f6c0e66683efc48896684775e7154cb5.jpeg",
+        "https://cdn.movertix.com/media/catalog/product/cache/image/1200x/o/n/oneplus-9-pro-5g-dual-sim-morning-mist-256gb-and-12gb-ram.jpg",
+        "https://imei.org/storage/files/images/6286/preview/oneplus-9-pro-2.png",
+        "https://www.notebookcheck.org/uploads/tx_nbc2/4_zu_3_OnePlus_9_Pro.jpg"
+      ],
+      "category": "phone",
+      "sales": 25
+    },
+    {
+      "id": 4,
+      "name": "Google Pixel 6",
+      "price": 799.99,
+      "description": "El Google Pixel 6 presenta un diseño renovado, el chip Google Tensor y una cámara impresionante.",
+      "discount": 10,
+      "manufacturer": "Google",
+      "weight": "207g",
+      "dimensions": "158.6 x 74.8 x 8.9 mm",
+      "countryOfOrigin": "China",
+      "modelNumber": "GA02900-US",
+      "color": "Stormy Black",
+      "material": "Aluminio y Vidrio",
+      "numberOfPieces": 1,
+      "specialFeatures": "5G, Titan M2 chip, Cámara dual, Modo nocturno",
+      "componentsIncluded": "Teléfono, Cable USB-C a USB-C, Adaptador Quick Switch, Documentación",
+      "reviews": [
+        {
+          "reviewer": "María Torres",
+          "rating": 5,
+          "comment": "La cámara es increíble y la experiencia Android pura es genial."
+        },
+        {
+          "reviewer": "Jorge Hernández",
+          "rating": 4,
+          "comment": "Gran teléfono, pero la duración de la batería podría ser mejor."
+        }
+      ],
+      "img": [
+        "https://m.media-amazon.com/images/I/71QQZr2pNSL.jpg",
+        "https://m.media-amazon.com/images/I/71et6gGXMfL.jpg",
+        "https://m.media-amazon.com/images/I/71SGl7xwR-L.jpg",
+        "https://i.blogs.es/6fc7ff/google-pixel-6-ficha-tecnica/1366_2000.jpg"
+      ],
+      "category": "phone",
+      "sales": 300
+    },
+    {
+      "id": 5,
+      "name": "Xiaomi Mi 11",
+      "price": 749.99,
+      "description": "El Xiaomi Mi 11 ofrece una pantalla AMOLED de 120Hz, Snapdragon 888 y una cámara de 108MP.",
+      "discount": 8,
+      "manufacturer": "Xiaomi",
+      "weight": "196g",
+      "dimensions": "164.3 x 74.6 x 8.1 mm",
+      "countryOfOrigin": "China",
+      "modelNumber": "M2011K2G",
+      "color": "Horizon Blue",
+      "material": "Aluminio y Vidrio",
+      "numberOfPieces": 1,
+      "specialFeatures": "5G, Carga inalámbrica, Cámara triple, Pantalla 120Hz",
+      "componentsIncluded": "Teléfono, Cargador, Cable USB-C, Funda de silicona, Documentación",
+      "reviews": [
+        {
+          "reviewer": "Laura Castillo",
+          "rating": 4,
+          "comment": "Excelente rendimiento y buena cámara."
+        },
+        {
+          "reviewer": "Ricardo López",
+          "rating": 3,
+          "comment": "El diseño es atractivo, pero la capa MIUI es un poco pesada."
+        }
+      ],
+      "img": [
+        "https://i0.wp.com/conectamos.shop/wp-content/uploads/2021/05/xiaomi_mi_11_lite_04_azul_ad_l.jpg?fit=800%2C800&ssl=1", "https://m.media-amazon.com/images/I/41UyuMzXChL._SL500_.jpg"],
+      "category": "phone",
+      "sales": 4000
+    },
+    {
+      "id": 6,
+      "name": "Honda CBR500R",
+      "price": 6999.99,
+      "description": "La Honda CBR500R es una motocicleta deportiva con un motor de 471cc y un diseño aerodinámico.",
+      "discount": 5,
+      "manufacturer": "Honda",
+      "weight": "192kg",
+      "dimensions": "2080 x 750 x 1140 mm",
+      "countryOfOrigin": "Japón",
+      "modelNumber": "CBR500R",
+      "color": "Rojo",
+      "material": "Aluminio y Plástico",
+      "numberOfPieces": 1,
+      "specialFeatures": "ABS, Sistema de frenos de disco, Suspensión delantera telescópica",
+      "componentsIncluded": "Motocicleta, Manual del usuario, Kit de herramientas",
+      "reviews": [
+        {
+          "reviewer": "Pedro García",
+          "rating": 4,
+          "comment": "Buena moto para principiantes, pero el asiento podría ser más cómodo."
+        },
+        {
+          "reviewer": "Sofia Martínez",
+          "rating": 5,
+          "comment": "Excelente manejo y gran diseño. ¡Muy divertida de conducir!"
+        }
+      ],
+      "img": [
+        "https://www.motofichas.com/images/phocagallery/Honda/cbr500r-2024/11-honda-cbr500r-2024-estudio-negro-01.jpg","https://motos.honda.com.ec/uploads/galeria/2022-CBR500R_studio_modelE_0002_M.jpeg"
+      ],
+      "category": "motorcycle",
+      "sales": 800
+    },
+    {
+      "id": 7,
+      "name": "Kawasaki Ninja ZX-6R",
+      "price": 8499.99,
+      "description": "La Kawasaki Ninja ZX-6R es una motocicleta deportiva con un motor de 636cc y un chasis de alta tecnología.",
+      "discount": 7,
+      "manufacturer": "Kawasaki",
+      "weight": "196kg",
+      "dimensions": "2060 x 715 x 1145 mm",
+      "countryOfOrigin": "Japón",
+      "modelNumber": "ZX636J",
+      "color": "Verde Lima",
+      "material": "Aluminio y Plástico",
+      "numberOfPieces": 1,
+      "specialFeatures": "KTRC (Control de tracción), ABS, Modo de conducción ajustable",
+      "componentsIncluded": "Motocicleta, Manual del usuario, Kit de herramientas",
+      "reviews": [
+        {
+          "reviewer": "Antonio López",
+          "rating": 5,
+          "comment": "Increíble rendimiento y control. Ideal para pistas."
+        },
+        {
+          "reviewer": "Camila Ruiz",
+          "rating": 4,
+          "comment": "Excelente moto, pero el mantenimiento puede ser costoso."
+        }
+      ],
+      "img": [
+        "https://publimotos.com/wp-content/uploads/2023/11/AGRESIVA-Asi-se-denomina-la-nueva-Kawasaki-Ninja-ZX-6R-2024-con-que-viene.jpg", "https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/th_19ZX636G_201BK1DRS3CG_A.jpg"
+      ],
+      "category": "motorcycle",
+      "sales": 4200
+    },
+    {
+      "id": 8,
+      "name": "Yamaha YZF-R3",
+      "price": 5499.99,
+      "description": "La Yamaha YZF-R3 es una motocicleta deportiva ligera con un motor de 321cc y un diseño agresivo.",
+      "discount": 6,
+      "manufacturer": "Yamaha",
+      "weight": "169kg",
+      "dimensions": "2090 x 720 x 1135 mm",
+      "countryOfOrigin": "Japón",
+      "modelNumber": "YZF-R3",
+      "color": "Blanco y Azul",
+      "material": "Aluminio y Plástico",
+      "numberOfPieces": 1,
+      "specialFeatures": "ABS, Control de tracción, Luces LED",
+      "componentsIncluded": "Motocicleta, Manual del usuario, Kit de herramientas",
+      "reviews": [
+        {
+          "reviewer": "Gabriel Gómez",
+          "rating": 5,
+          "comment": "Perfecta para principiantes y manejo en ciudad."
+        },
+        {
+          "reviewer": "Isabel Morales",
+          "rating": 4,
+          "comment": "Gran moto, aunque el tanque de combustible es pequeño."
+        }
+      ],
+      "img": [
+        "https://soymotero.net/wp-content/uploads/2018/09/Yamaha_YZF-R3_Replica_Movistar_01.jpg", "https://360view.3dmodels.org/zoom/Yamaha/Yamaha_YZF_R3_2015_1000_0001.jpg"
+      ],
+      "category": "motorcycle",
+      "sales": 1200
+    },
+    {
+      "id": 9,
+      "name": "Boxer BM 150",
+      "price": 2999.99,
+      "description": "La Boxer BM 150 es una motocicleta robusta y confiable, ideal para el transporte diario y viajes cortos. Su motor de 150cc ofrece un buen equilibrio entre rendimiento y eficiencia de combustible.",
+      "discount": 5,
+      "manufacturer": "Boxer",
+      "weight": "130kg",
+      "dimensions": "2050 x 750 x 1100 mm",
+      "countryOfOrigin": "India",
+      "modelNumber": "BM 150",
+      "color": "Negro y Rojo",
+      "material": "Acero y Plástico",
+      "numberOfPieces": 1,
+      "specialFeatures": "Sistema de frenos CBS, Rines de aleación, Diseño ergonómico",
+      "componentsIncluded": "Motocicleta, Manual del usuario, Kit de herramientas",
+      "reviews": [
+        {
+          "reviewer": "Carlos Hernández",
+          "rating": 2,
+          "comment": "Una moto económica y duradera, perfecta para uso urbano."
+        },
+        {
+          "reviewer": "Ana Sánchez",
+          "rating": 2,
+          "comment": "Buena moto, aunque el diseño podría ser más moderno."
+        }
+      ],
+      "img": [
+        "https://www.colcamer.com/wp-content/uploads/2023/02/BOXER-150-Negro-Nebulosa-Azul-hd-01.webp", "https://image.made-in-china.com/44f3j00njGlTZrFYfzR/Bm150-Dirtbike-de-alta-calidad-motocicleta-para-Bajaj-Boxer-BM.webp"
+      ],
+      "category": "motorcycle",
+      "sales": 4000
+    }
+  ]
+}

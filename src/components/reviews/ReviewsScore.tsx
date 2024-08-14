@@ -3,12 +3,15 @@ import Star from '../../assets/svg/Star';
 import StarFill from '../../assets/svg/StarFill';
 import styles from './ReviewsScore.module.css'
 
+interface ReviewsScoreProps{
+    score: number,
+    setScore?: React.Dispatch<React.SetStateAction<number>>
+}
+
 /**
  * Es el indicador de la calificación, sel e envía el valor, si se indica un seter permite manipularlo
  */
-const ReviewsScore = () => {
-
-    const [score, setScore] = useState(1);
+const ReviewsScore: React.FC<ReviewsScoreProps> = ({score, setScore}) => {
 
     const elementos = [];
     
