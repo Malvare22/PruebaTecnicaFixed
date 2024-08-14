@@ -1,0 +1,31 @@
+.productCard .ant-card-body{
+    padding: 0;
+}
+
+.productCard .frame{
+    position: relative;
+}
+
+.productCard .circle{
+    background-color:#E6406D;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin: 6px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.productCard .like{
+    position: absolute;
+    right: 0;
+    margin: 4px;
+}
+
+

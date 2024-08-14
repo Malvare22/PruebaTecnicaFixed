@@ -14,7 +14,7 @@ function Header() {
                 <div className={styles.logoContainer}><img src={Logo}></img></div>
                 <div className={styles.btnsContainer}>
                     <div className={styles.btns}>
-                        <Button className={styles.btn1}>Crea Tu Cuenta</Button>
+                        <Button className={'yellowButton'}>Crea Tu Cuenta</Button>
                         <Button className={styles.btn2}>Iniciar Sesión</Button>
                         <div className={styles.iconContainer}>
                             <Cart className={styles.icon}></Cart>

@@ -1,5 +1,4 @@
 #root, body {
-  max-width: 1280px;
   margin: 0;
   padding: 0;
 }
@@ -49,5 +48,18 @@ body{
   font-family: 'Open Sans';
   src: url('assets/fonts/Open_Sans/static/OpenSans-Light.ttf');
   font-weight: lighter;
+}
+
+.yellowButton{
+  
+  background-color: #FFD300;
+  color: #004AC1;
+
+}
+
+.cardsContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+  gap: 10px; /* Espacio entre las columnas */
 }
 

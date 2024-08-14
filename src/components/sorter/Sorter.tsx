@@ -47,7 +47,7 @@ function Sorter() {
 
   return (
     <>
-      <div className="sorterStyles" style={{display: 'flex', alignItems: 'center'}}>
+      <div className="sorterStyles" style={{display: 'flex', alignItems: 'center', alignContent: 'center'}}>
         <div className="label">Ordenar por</div>
         <div className="dropMenu">
           <Dropdown menu={{ items }}>

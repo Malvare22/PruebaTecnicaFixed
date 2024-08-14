@@ -34,7 +34,7 @@ const Point : React.FC<PointProps> = ({id, score, setScore}) => {
     }
 
     return<>
-        <div onClick={handleClick}>{score >= id ? <StarFill></StarFill> : <Star></Star>}</div>
+        <div style={{marginRight: 3}} onClick={handleClick}>{score >= id ? <StarFill></StarFill> : <Star></Star>}</div>
     </>;
 };
 

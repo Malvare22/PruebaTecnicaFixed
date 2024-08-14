@@ -1,5 +1,5 @@
 .container{
-    height: 450px;
+    height: 28rem;
     border: 2px solid black;
     position: relative;
 }
@@ -10,7 +10,7 @@
     fill: #FFD300;
     width: 100%;
     svg{
-
+        max-height: 28rem;
         width: 100%;
     }
 }
