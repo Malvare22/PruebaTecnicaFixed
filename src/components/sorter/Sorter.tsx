@@ -1,21 +1,14 @@
 import { Cascader, Dropdown, Input, Space } from "antd"
-import Search from "antd/es/transfer/search"
 import type { GetProps, MenuProps } from 'antd';
-import './SearchBar.css'
+import './Sorter.css'
 import { useState } from "react";
 import CompactDown from "../../assets/svg/searchBar/CompactDown";
-type SearchProps = GetProps<typeof Input.Search>;
 
-
-
-const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
-
-function SearchBar() {
+function Sorter() {
 
   const [category, setCaterogy] = useState(0);
 
-          
-  const tags: string[] = ['Todas las categorías', 'Celulares', 'Motocicletas'];
+  const tags: string[] = ['Mejores Reviews', 'Peores Reviews', 'Mayor Precio', 'Menor Precio'];
 
   const items: MenuProps['items'] = [
     {
@@ -42,12 +35,20 @@ function SearchBar() {
         </div>
       ),
     },
+    {
+      key: '4',
+      label: (
+        <div onClick={() => setCaterogy(3)}>
+          {tags[3]}
+        </div>
+      ),
+    },
   ];
 
   return (
     <>
-      <div className="searchBarStyles" style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-        <div className="input"><Search placeholder="Encuentra el producto que necesitas"/></div>
+      <div className="sorterStyles" style={{display: 'flex', alignItems: 'center'}}>
+        <div className="label">Ordenar por</div>
         <div className="dropMenu">
           <Dropdown menu={{ items }}>
             <a onClick={(e) => e.preventDefault()}>
@@ -62,4 +63,4 @@ function SearchBar() {
   )
 }
 
-export default SearchBar
+export default Sorter

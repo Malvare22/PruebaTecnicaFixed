@@ -1,0 +1,27 @@
+.sorterStyles .dropMenu .ant-space-item{
+    width: 170px;
+    height: 30px;
+    font-size: 14px;
+    border: solid 1px black;
+    font-weight: bold;
+    background-color: #EBEFF4;
+    color: #4a4f59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.sorterStyles .label{
+    width: 170px;
+    height: 30px;
+    font-size: 14px;
+    border: solid 1px black;
+    font-weight: bold;
+    background-color: #EBEFF4;
+    color: #4a4f59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
