@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div style={{display: 'flex', alignContent: 'center', marginLeft: '80px', marginTop: '30px', marginBottom: '30px'}}>
+      <div style={{display: 'flex', marginRight: '0px', marginLeft: '80px', marginTop: '30px', marginBottom: '30px'}}>
         <Sorter></Sorter>
         <SearchBar></SearchBar>
       </div>

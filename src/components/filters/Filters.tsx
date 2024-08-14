@@ -5,7 +5,7 @@ function Filters() {
 
   return (
     <>
-        <Card style={{ width: 343 }}>
+        <Card style={{ width: 290 }}>
             <Marks></Marks>
             <PriceRange></PriceRange>
             <ReviewsSelector></ReviewsSelector>
