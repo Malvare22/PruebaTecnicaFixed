@@ -7,6 +7,10 @@ import SearchBar from './components/searchBar/SearchBar'
 import Sorter from './components/sorter/Sorter'
 import Filters from './components/filters/Filters'
 import ProductCard from './components/productCard/ProductCard'
+import ImgCarousel from './components/carousel/ImgCarousel'
+import ProductOut from './components/products/ProductsOut'
+
+
 
 function App() {
 
@@ -25,7 +29,20 @@ function App() {
           <ProductCard></ProductCard>
           <ProductCard></ProductCard>
           <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
+          <ProductCard></ProductCard>
         </div>
+      </div>
+      <div className='space'>
+        <div style={{color: '#2B3445', fontWeight: 'bold', textAlign: 'center'}}>Ofertas y Promociones</div>
+        <div>
+          <ImgCarousel></ImgCarousel>
+        </div>
+      </div>
+      <div className='space'>
+        <ProductOut tittle='Nuestros Productos Más Vendidos'></ProductOut>
       </div>
       {/* <ProductModal></ProductModal> */}
       <div style={{height: 10, margin: 100}}></div>

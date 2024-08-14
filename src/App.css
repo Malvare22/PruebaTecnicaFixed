@@ -58,8 +58,14 @@ body{
 }
 
 .cardsContainer{
+  height: 600px;
+  overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-  gap: 10px; /* Espacio entre las columnas */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
+
+.space{
+  margin: 20px 0 20px 0;
+}
