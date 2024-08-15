@@ -59,9 +59,27 @@ const Marks = () => {
 }
 
 const PriceRange = () => {
+
+    const {price, setPrice} = useContext(FiltersContext);
+    const handleInput = (value: string, x: string) => {
+        setPrice({...price, [x]: value});
+    };
+
     return <>
         <div className={styles.label}>Precio</div>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}><InputNumber style={{width: '120px'}}></InputNumber><a style={{margin: '0px', fontSize:'20px'}}>-</a><InputNumber style={{width: '120px'}}></InputNumber></div>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <InputNumber 
+                style={{ width: '120px' }} 
+                value={price.l} 
+                onChange={(value) => handleInput(value, 'l')} 
+            />
+            <a style={{ margin: '0px', fontSize: '20px' }}>-</a>
+            <InputNumber 
+                style={{ width: '120px' }} 
+                value={price.r}
+                onChange={(value) => handleInput(value, 'r')} 
+        />
+        </div>
         
     </>;
 }

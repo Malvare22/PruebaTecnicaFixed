@@ -8,6 +8,7 @@ import ProductCard from "../../components/productCard/ProductCard";
 import { Product } from "../../adapters/Product";
 import { FiltersContext } from "../../context/FiltersContext";
 import { categories } from "../../adapters/Categories";
+import { getRealValue } from "../../utilities/getRealValue";
 
 export default function Home(){
 
@@ -18,6 +19,8 @@ export default function Home(){
     const [category, setCaterogy] = useState(0);
 
     const [mark, setMark] = useState('');
+
+    const [price, setPrice] = useState({l: '', r: ''});
 
     function filterData(): Product[]{
       let tmp_data: Product[] = data; 
@@ -37,10 +40,18 @@ export default function Home(){
         )
       }
 
+      if((price.l != '' && price.r != '')){
+        const l = parseInt(price.l);
+        const r = parseInt(price.r);
+        tmp_data = tmp_data.filter(
+          (p) => (getRealValue(p) >= l && getRealValue(p) <= r)
+        )
+      }
+
       return tmp_data;
     };
 
-    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark}}>
+    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark, price, setPrice}}>
       <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>
         <Sorter></Sorter>
         <SearchBar></SearchBar>
