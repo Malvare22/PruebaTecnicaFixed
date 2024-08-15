@@ -8,7 +8,6 @@ import { DataContext } from '../../context/DataContext';
 
 const ProductModal = () => {
   const {modalProduct, openModal: isModalOpen, setOpenModal: setIsModalOpen} = useContext(DataContext);
-  console.log(modalProduct)
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -22,7 +21,7 @@ const ProductModal = () => {
     setIsModalOpen(false);
   };
 
-
+  if(modalProduct == null) return<></>;
 
   return (
     <>
@@ -31,7 +30,7 @@ const ProductModal = () => {
         <img src={Man} width={'520px'}></img>
         <div style={{display: 'flex', justifyContent:'center', margin: '20px'}}>
           <div>
-            <img src={Man} width={'120px'} height={'140px'}></img>
+            <img src={modalProduct.img[0]} width={'120px'} height={'140px'}></img>
           </div>
           <div style={{paddingLeft: '20px'}}>
             <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>${modalProduct?.price} x 1</div>

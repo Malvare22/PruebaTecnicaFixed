@@ -17,6 +17,8 @@ export default function Home(){
 
     const [category, setCaterogy] = useState(0);
 
+    const [mark, setMark] = useState('');
+
     function filterData(): Product[]{
       let tmp_data: Product[] = data; 
       tmp_data = tmp_data.filter(
@@ -29,10 +31,16 @@ export default function Home(){
         )
       }
 
+      if(mark != ''){
+        tmp_data = tmp_data.filter(
+          (p) => (p.manufacturer == mark)
+        )
+      }
+
       return tmp_data;
     };
 
-    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy}}>
+    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark}}>
       <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>
         <Sorter></Sorter>
         <SearchBar></SearchBar>
