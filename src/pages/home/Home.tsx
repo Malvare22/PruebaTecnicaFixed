@@ -7,6 +7,7 @@ import { DataContext } from "../../context/DataContext";
 import ProductCard from "../../components/productCard/ProductCard";
 import { Product } from "../../adapters/Product";
 import { FiltersContext } from "../../context/FiltersContext";
+import { categories } from "../../adapters/Categories";
 
 export default function Home(){
 
@@ -14,16 +15,24 @@ export default function Home(){
 
     const [searchText, setSearchText] = useState('');
 
+    const [category, setCaterogy] = useState(0);
+
     function filterData(): Product[]{
-      let tmp_data: Product[] = []; 
-      tmp_data = data.filter(
+      let tmp_data: Product[] = data; 
+      tmp_data = tmp_data.filter(
         (p: Product) => ((p.name.toLowerCase().includes(searchText.toLowerCase())))
       )
+
+      if(category != 0){
+        tmp_data = tmp_data.filter(
+          (p) => (p.category == categories[category - 1])
+        )
+      }
 
       return tmp_data;
     };
 
-    return <FiltersContext.Provider value={{searchText, setSearchText}}>
+    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy}}>
       <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>
         <Sorter></Sorter>
         <SearchBar></SearchBar>

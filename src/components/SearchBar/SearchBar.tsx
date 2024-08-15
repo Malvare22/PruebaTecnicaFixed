@@ -8,8 +8,7 @@ import { FiltersContext } from "../../context/FiltersContext";
 
 function SearchBar() {
 
-  const [category, setCaterogy] = useState(0);
-  const {searchText, setSearchText} = useContext(FiltersContext);
+  const {searchText, setSearchText, category, setCaterogy} = useContext(FiltersContext);
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value);
