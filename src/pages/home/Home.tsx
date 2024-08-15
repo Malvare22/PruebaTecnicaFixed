@@ -11,6 +11,7 @@ import { categories } from "../../adapters/Categories";
 import { getRealValue } from "../../utilities/getRealValue";
 import getScore from "../../utilities/getScore";
 import { sorters } from "../../utilities/sorterFunctions";
+import ProductOut from "../../components/products/ProductsOut";
 
 export default function Home(){
 
@@ -92,7 +93,7 @@ export default function Home(){
         </div>
       </div>
       <div className='space'>
-        {/* <ProductOut tittle='Nuestros Productos Más Vendidos'></ProductOut> */}
+        <ProductOut tittle='Nuestros Productos Más Vendidos'></ProductOut>
       </div>
       {/* <ProductModal></ProductModal> */}
     </FiltersContext.Provider>
