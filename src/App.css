@@ -63,9 +63,18 @@ body{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  margin-top: -14px;
+  margin-left: 14px;
 }
 
 
 .space{
   margin: 20px 0 20px 0;
+}
+
+.imgCarouselStyles .ant-carousel{
+  button{
+      color: black;
+      background-color: black;
+  }
 }

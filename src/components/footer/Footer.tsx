@@ -1,7 +1,6 @@
 import styles from './Footer.module.css'
 import { Layer_1 } from '../../assets/svg/footer/Layer_1';
 import { Layer_2 } from '../../assets/svg/footer/Layer_2';
-import CSS from "csstype";
 import { Plane } from '../../assets/svg/footer/Plane';
 import Logo from '../../assets/svg/Logotipo-Macropay.svg'
 import WhatsApp from '../../assets/svg/footer/whatsapp.svg'
