@@ -10,6 +10,7 @@ import { FiltersContext } from "../../context/FiltersContext";
 import { categories } from "../../adapters/Categories";
 import { getRealValue } from "../../utilities/getRealValue";
 import getScore from "../../utilities/getScore";
+import { sorters } from "../../utilities/sorterFunctions";
 
 export default function Home(){
 
@@ -25,8 +26,13 @@ export default function Home(){
 
     const [stars, setStars] = useState(-1);
 
+    const [sorter, setSorter] = useState(0);
+
     function filterData(): Product[]{
       let tmp_data: Product[] = data; 
+
+      tmp_data.sort(sorters[sorter]);
+
       tmp_data = tmp_data.filter(
         (p: Product) => ((p.name.toLowerCase().includes(searchText.toLowerCase())))
       )
@@ -62,7 +68,7 @@ export default function Home(){
       return tmp_data;
     };
 
-    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark, price, setPrice, stars, setStars}}>
+    return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark, price, setPrice, stars, setStars, sorter, setSorter, buffer: filterData()}}>
       <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>
         <Sorter></Sorter>
         <SearchBar></SearchBar>

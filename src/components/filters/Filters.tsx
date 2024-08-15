@@ -20,8 +20,7 @@ function Filters() {
 
 const Marks = () => {
 
-    const {data} = useContext(DataContext);
-    const {mark, setMark} = useContext(FiltersContext);
+    const {mark, setMark, buffer} = useContext(FiltersContext);
 
     console.log(mark)
 
@@ -31,7 +30,7 @@ const Marks = () => {
 
     const marks = (): string[] => {
         let st = new Set<string>();
-        data.forEach((element: Product) => {
+        buffer.forEach((element: Product) => {
             st.add(element.manufacturer);
         });
 
@@ -47,13 +46,6 @@ const Marks = () => {
                     (element: string) => <div><Checkbox checked={mark == element} onClick={handleCheckbox} value={element}>{element}</Checkbox></div>
                 )
             }
-            {/* <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div>
-            <div><Checkbox>Hola</Checkbox></div> */}
         </div>
     </>;
 }

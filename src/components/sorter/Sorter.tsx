@@ -1,12 +1,13 @@
 import { Cascader, Dropdown, Input, Space } from "antd"
 import type { GetProps, MenuProps } from 'antd';
 import './Sorter.css'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CompactDown from "../../assets/svg/searchBar/CompactDown";
+import { FiltersContext } from "../../context/FiltersContext";
 
 function Sorter() {
 
-  const [category, setCaterogy] = useState(0);
+  const {sorter, setSorter} = useContext(FiltersContext);
 
   const tags: string[] = ['Mejores Reviews', 'Peores Reviews', 'Mayor Precio', 'Menor Precio'];
 
@@ -14,7 +15,7 @@ function Sorter() {
     {
       key: '1',
       label: (
-        <div onClick={() => setCaterogy(0)}>
+        <div onClick={() => setSorter(0)}>
           {tags[0]}
         </div>
       ),
@@ -22,7 +23,7 @@ function Sorter() {
     {
       key: '2',
       label: (
-        <div onClick={() => setCaterogy(1)}>
+        <div onClick={() => setSorter(1)}>
           {tags[1]}
         </div>
       ),
@@ -30,7 +31,7 @@ function Sorter() {
     {
       key: '3',
       label: (
-        <div onClick={() => setCaterogy(2)}>
+        <div onClick={() => setSorter(2)}>
           {tags[2]}
         </div>
       ),
@@ -38,7 +39,7 @@ function Sorter() {
     {
       key: '4',
       label: (
-        <div onClick={() => setCaterogy(3)}>
+        <div onClick={() => setSorter(3)}>
           {tags[3]}
         </div>
       ),
@@ -53,7 +54,7 @@ function Sorter() {
           <Dropdown menu={{ items }}>
             <a onClick={(e) => e.preventDefault()}>
               <Space>
-                <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center'}}><div style={{marginRight: '10px'}}>{tags[category]}</div><CompactDown></CompactDown></div>
+                <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center'}}><div style={{marginRight: '10px'}}>{tags[sorter]}</div><CompactDown></CompactDown></div>
               </Space>
             </a>
           </Dropdown>
