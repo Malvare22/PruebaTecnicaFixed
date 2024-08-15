@@ -6,6 +6,7 @@ import { Product } from "../../adapters/Product"
 import getScore from "../../utilities/getScore"
 import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
+import { getRealValue } from "../../utilities/getRealValue"
 
 interface ProductCardProps{
   product: Product;
@@ -39,8 +40,8 @@ const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
                   <div><ReviewsScore score={getScore(product.reviews)}/></div>
                 </div>
                 <div>
-                  <div style={{fontSize: '22px', color: '#004AC1', fontWeight: 'bolder'}}>${product.price}</div>
-                  <div style={{fontSize: '16px', marginTop: '-10px', color: '#7D879C', fontWeight: 'bolder', textAlign:'end', textDecorationLine: 'line-through'}}>$4,100</div>
+                  <div style={{fontSize: '22px', color: '#004AC1', fontWeight: 'bolder'}}>${getRealValue(product)}</div>
+                  <div style={{fontSize: '16px', marginTop: '-10px', color: '#7D879C', fontWeight: 'bolder', textAlign:'end', textDecorationLine: 'line-through'}}>${product.price}</div>
                 </div>
               </div>
               <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '10px'}}>
