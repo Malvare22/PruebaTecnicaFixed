@@ -2,18 +2,18 @@ import { Cascader, Dropdown, Input, Space } from "antd"
 import Search from "antd/es/transfer/search"
 import type { GetProps, MenuProps } from 'antd';
 import './SearchBar.css'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CompactDown from "../../assets/svg/searchBar/CompactDown";
-type SearchProps = GetProps<typeof Input.Search>;
-
-
-
-const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
+import { FiltersContext } from "../../context/FiltersContext";
 
 function SearchBar() {
 
   const [category, setCaterogy] = useState(0);
+  const {searchText, setSearchText} = useContext(FiltersContext);
 
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value);
+  }
           
   const tags: string[] = ['Todas las categorías', 'Celulares', 'Motocicletas'];
 
@@ -47,7 +47,7 @@ function SearchBar() {
   return (
     <>
       <div className="searchBarStyles" style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
-        <div className="input"><Search placeholder="Encuentra el producto que necesitas"/></div>
+        <div className="input"><Search placeholder="Encuentra el producto que necesitas" onChange={handleInput}/></div>
         <div className="dropMenu">
           <Dropdown menu={{ items }}>
             <a onClick={(e) => e.preventDefault()}>
