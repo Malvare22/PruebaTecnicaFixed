@@ -4,12 +4,21 @@ import ReviewsScore from "../reviews/ReviewsScore"
 import Like from "../like/Like"
 import { Product } from "../../adapters/Product"
 import getScore from "../../utilities/getScore"
+import { useContext } from "react"
+import { DataContext } from "../../context/DataContext"
 
 interface ProductCardProps{
   product: Product;
 }
 
 const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
+
+  const {setModalProduct, setOpenModal} = useContext(DataContext);
+
+  const handleButton = () => {
+    setModalProduct(product);
+    setOpenModal(true);
+  };
 
   return (
     <>
@@ -36,7 +45,7 @@ const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
               </div>
               <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '10px'}}>
                 <div style={{color: '#7D879C', fontSize: '10px'}}>$120 p/semana <br></br> o $520 p/mes</div>
-                <Button className={'yellowButton'}>Lo Quiero!</Button>
+                <Button className={'yellowButton'} onClick={handleButton}>Lo Quiero!</Button>
               </div>
             </div>
         </Card>

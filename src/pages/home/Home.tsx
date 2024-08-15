@@ -8,7 +8,7 @@ import ProductCard from "../../components/productCard/ProductCard";
 
 export default function Home(){
 
-    const {data, product} = useContext(DataContext);
+    const {data} = useContext(DataContext);
 
     return <>
       <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>

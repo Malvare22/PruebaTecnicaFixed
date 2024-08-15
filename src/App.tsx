@@ -2,7 +2,7 @@ import { Card, Checkbox } from 'antd'
 import './App.css'
 import { DataContext } from './context/DataContext'
 import React, { useEffect, useState } from 'react'
-import { DataForContext } from './adapters/Product'
+import { DataForContext, Product } from './adapters/Product'
 import { getProducts } from './services/getProducts'
 import Home from './pages/home/Home'
 import Header from './components/header/Header'
@@ -13,23 +13,19 @@ import ProductModal from './components/modal/ProductModal'
 
 function App() {
 
-  const [openModal, setOpenModal] = useState(false);
-  const [data, setData] = useState<DataForContext>({
-    data: [],
-    product: null,
-    openModal,
-    setOpenModal
-  });
+  const [openModal, setOpenModal] = useState(true);
+  const [modalProduct, setModalProduct] = useState<Product | null >(null);
+  const [data, setData] = useState<Product[]>([]);
   
   useEffect(
     () => {
-      setData({data: getProducts(), product: null, openModal, setOpenModal});
+      setData(getProducts());
     }, []
   )
 
   return (<>
-    <ProductModal></ProductModal>
-    <DataContext.Provider value={data}>
+    <DataContext.Provider value={{data, modalProduct, setModalProduct, openModal, setOpenModal}}>
+      <ProductModal></ProductModal>
       <Header></Header>
       <Home></Home>
       <Footer></Footer>

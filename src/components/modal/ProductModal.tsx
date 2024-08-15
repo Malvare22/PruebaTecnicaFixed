@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Modal } from 'antd';
-import { CSSProperties } from 'react';
 import Man from '../../assets/img/buying.png';
 import './Modal.css'
 import { Check } from '../../assets/svg/Check';
+import { DataContext } from '../../context/DataContext';
 
-export default function ProductModal(){
-  const [isModalOpen, setIsModalOpen] = useState(true);
+
+const ProductModal = () => {
+  const {modalProduct, openModal: isModalOpen, setOpenModal: setIsModalOpen} = useContext(DataContext);
+  console.log(modalProduct)
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -24,9 +26,6 @@ export default function ProductModal(){
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal
-      </Button>
       <Modal className='modalStyle' closeIcon={false} open={isModalOpen} onOk={handleOk} footer={null} onCancel={handleCancel}>
         
         <img src={Man} width={'520px'}></img>
@@ -35,16 +34,16 @@ export default function ProductModal(){
             <img src={Man} width={'120px'} height={'140px'}></img>
           </div>
           <div style={{paddingLeft: '20px'}}>
-            <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>$3,499.00 x 1</div>
-            <div style={{color: '#2B3445', fontSize: '16px', fontWeight:'bold', width:'60%'}}>Samsung A10S 13+2MP 64GB, 4GB RAM</div>
-            <div style={{color: '#7D879C', fontSize: '14px', fontWeight:'bold'}}>Color seleccionado: Gris Ratón</div>
+            <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>${modalProduct?.price} x 1</div>
+            <div style={{color: '#2B3445', fontSize: '16px', fontWeight:'bold', width:'60%'}}>{modalProduct?.name}</div>
+            <div style={{color: '#7D879C', fontSize: '14px', fontWeight:'bold'}}>Color seleccionado: {modalProduct?.color}</div>
           </div>
         </div>
         <div style={{display: 'flex', justifyContent:'space-between', alignContent:'center', padding:'18px 40px 18px 40px', borderTop:'1px #707070 solid', borderBottom:'1px #707070 solid'}}>
           <div style={{color: '#7D879C', fontSize:'16px', fontWeight:'bolder'}}>1 ítem en tu carrito</div>
           <div style={{display: 'flex', alignContent: 'center'}}>
             <div style={{color: '#7D879C', fontSize:'16px', fontWeight:'bolder'}}>Subtotal</div>
-            <div style={{color: '#004AC1', fontSize:'16px', fontWeight:'bolder', marginLeft:'10px'}}>$3.499,00</div>
+            <div style={{color: '#004AC1', fontSize:'16px', fontWeight:'bolder', marginLeft:'10px'}}>${modalProduct?.price}</div>
           </div>
         </div>
         <div className='rows'>
@@ -63,3 +62,5 @@ export default function ProductModal(){
     </>
   );
 };
+
+export default ProductModal;
