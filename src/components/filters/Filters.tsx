@@ -85,9 +85,12 @@ const PriceRange = () => {
 }
 
 const ReviewsSelector = () => {
+
+    const {stars, setStars} = useContext(FiltersContext);
+
     return <>
         <div className={styles.label}>Reviews</div>
-        <ReviewsScore></ReviewsScore>
+        <ReviewsScore score={stars} setScore={setStars}></ReviewsScore>
         
     </>;
 }

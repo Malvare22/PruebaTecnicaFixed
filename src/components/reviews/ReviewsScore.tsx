@@ -9,7 +9,7 @@ interface ReviewsScoreProps{
 }
 
 /**
- * Es el indicador de la calificación, sel e envía el valor, si se indica un seter permite manipularlo
+ * Es el indicador de la calificación, se le envía el valor, si se indica un seter permite manipularlo
  */
 const ReviewsScore: React.FC<ReviewsScoreProps> = ({score, setScore}) => {
 

@@ -7,5 +7,5 @@ export default function getScore(scores: Review[]): number{
             sum += review.rating;
         }
     )
-    return (sum/scores.length);
+    return Math.floor(sum/scores.length);
 }
