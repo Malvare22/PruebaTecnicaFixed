@@ -8,8 +8,19 @@ import Home from './pages/home/Home'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import ProductModal from './components/modal/ProductModal'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ProductDetails from './pages/product/ProductDetails'
 
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "product",
+    element: <ProductDetails></ProductDetails>,
+  },
+]);
 
 function App() {
 
@@ -27,7 +38,7 @@ function App() {
     <DataContext.Provider value={{data, modalProduct, setModalProduct, openModal, setOpenModal}}>
       <ProductModal></ProductModal>
       <Header></Header>
-      <Home></Home>
+      <RouterProvider router={router} />
       <Footer></Footer>
     </DataContext.Provider>
     </>

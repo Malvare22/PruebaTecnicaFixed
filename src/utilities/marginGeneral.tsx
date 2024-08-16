@@ -1,0 +1,1 @@
+export const MarginGeneral = '40px'

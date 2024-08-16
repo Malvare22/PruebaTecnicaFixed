@@ -12,6 +12,10 @@ interface ProductCardProps{
   product: Product;
 }
 
+export const priceStyle : React.CSSProperties = {fontSize: '22px', color: '#004AC1', fontWeight: 'bolder'};
+
+export const oldPriceStyle : React.CSSProperties = {fontSize: '16px', marginTop: '-10px', color: '#7D879C', fontWeight: 'bolder', textAlign:'end', textDecorationLine: 'line-through'};
+
 const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
 
   const {setModalProduct, setOpenModal} = useContext(DataContext);
@@ -40,8 +44,8 @@ const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
                   <div><ReviewsScore score={getScore(product.reviews)}/></div>
                 </div>
                 <div>
-                  <div style={{fontSize: '22px', color: '#004AC1', fontWeight: 'bolder'}}>${getRealValue(product)}</div>
-                  <div style={{fontSize: '16px', marginTop: '-10px', color: '#7D879C', fontWeight: 'bolder', textAlign:'end', textDecorationLine: 'line-through'}}>${product.price}</div>
+                  <div style={priceStyle}>${getRealValue(product)}</div>
+                  <div style={oldPriceStyle}>${product.price}</div>
                 </div>
               </div>
               <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '10px'}}>
