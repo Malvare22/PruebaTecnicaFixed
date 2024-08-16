@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import { DataContext } from "../../context/DataContext";
 import { Product } from "../../adapters/Product";
 import { FiltersContext } from "../../context/FiltersContext";
+import { categories } from "../../adapters/Categories";
 function Filters() {
 
   return (
@@ -20,17 +21,33 @@ function Filters() {
 
 const Marks = () => {
 
-    const {mark, setMark, buffer} = useContext(FiltersContext);
+    const {mark, setMark, buffer, category} = useContext(FiltersContext);
+
+    const {data} = useContext(DataContext);
 
     console.log(mark)
 
+    const filterMarks = (): Product[] => {
+        if(category != 0){
+            return data.filter(
+              (p : Product) => (p.category == categories[category - 1])
+            )
+        }
+
+        return data;
+    };
+
     const handleCheckbox = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if(mark == event.currentTarget.value){
+            setMark(0);
+            return;
+        }
         setMark(event.currentTarget.value);
     };
 
     const marks = (): string[] => {
         let st = new Set<string>();
-        buffer.forEach((element: Product) => {
+        filterMarks().forEach((element: Product) => {
             st.add(element.manufacturer);
         });
 
