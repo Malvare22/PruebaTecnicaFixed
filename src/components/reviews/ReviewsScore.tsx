@@ -33,7 +33,9 @@ interface PointProps{
 const Point : React.FC<PointProps> = ({id, score, setScore}) => {
 
     const handleClick = () => {
-        if(setScore) setScore(id);
+        if(!setScore) return;
+        if(score == id) setScore(-1);
+        else setScore(id);
     }
 
     return<>

@@ -54,7 +54,7 @@ export default function Home(){
         const l = parseInt(price.l);
         const r = parseInt(price.r);
         tmp_data = tmp_data.filter(
-          (p) => (getRealValue(p) >= l && getRealValue(p) <= r)
+          (p) => (l <= r && getRealValue(p) >= l && getRealValue(p) <= r)
         )
       }
 
