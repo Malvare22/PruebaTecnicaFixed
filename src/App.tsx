@@ -39,7 +39,7 @@ function App() {
       <ProductModal></ProductModal>
       <Header></Header>
       <RouterProvider router={router} />
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </DataContext.Provider>
     </>
   )

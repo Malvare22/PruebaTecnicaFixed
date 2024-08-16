@@ -7,6 +7,7 @@ import getScore from "../../utilities/getScore"
 import { useContext } from "react"
 import { DataContext } from "../../context/DataContext"
 import { getRealValue } from "../../utilities/getRealValue"
+import { Link } from "react-router-dom"
 
 interface ProductCardProps{
   product: Product;
@@ -40,7 +41,7 @@ const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
             <div style={{padding: '0px 16px 10px 16px'}}>
               <div style={{display:'flex', justifyContent: 'space-between'}}>
                 <div>
-                  <div style={{fontWeight: 'bold', fontSize: '12px', marginTop: '10px', marginBottom: '4px'}}>{product.name}</div>
+                  <Link to={'/product?id=' + product.id} style={{fontWeight: 'bold', fontSize: '12px', marginTop: '10px', marginBottom: '4px'}}>{product.name}</Link>
                   <div><ReviewsScore score={getScore(product.reviews)}/></div>
                 </div>
                 <div>
