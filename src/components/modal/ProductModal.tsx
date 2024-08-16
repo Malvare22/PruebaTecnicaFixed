@@ -32,7 +32,7 @@ const ProductModal = () => {
           <div>
             <img src={modalProduct.img[0]} width={'120px'} height={'140px'}></img>
           </div>
-          <div style={{paddingLeft: '20px'}}>
+          <div style={{paddingLeft: '20px', width: '300px'}}>
             <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>${modalProduct?.price} x 1</div>
             <div style={{color: '#2B3445', fontSize: '16px', fontWeight:'bold', width:'60%'}}>{modalProduct?.name}</div>
             <div style={{color: '#7D879C', fontSize: '14px', fontWeight:'bold'}}>Color seleccionado: {modalProduct?.color}</div>
