@@ -17,8 +17,8 @@ export const CreditSection = () => {
     return <div className={styles.creditContainer}>
         <div className={styles.layer1}><div><TaxesLayer1></TaxesLayer1></div></div>
         <div className={styles.layer2}><div><TaxesLayer2></TaxesLayer2></div></div>
-        <Taxes></Taxes>
-        <Letter></Letter>
+        {/* <Taxes></Taxes>
+        <Letter></Letter> */}
     </div>;
 };
 

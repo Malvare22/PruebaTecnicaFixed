@@ -52,12 +52,16 @@ export default function ProductDetails(){
                     <Col span={14}><GeneralInformation></GeneralInformation></Col>
                 </Row>
                 <Row style={{color: '#2B3445', fontSize: '16px', fontWeight: 'bold', marginTop: '10px', marginBottom: '10px'}}>Información Detallada del Producto</Row>
-                <Row justify={'center'}>
-                    <Col span={10}><ImgsProduct></ImgsProduct></Col>
-                    <Col span={13} offset={1}>
-                        <Row justify={'center'} style={{width: '100%'}}><Panel></Panel></Row>
-                        <><CreditSection></CreditSection></>
-                    </Col>
+                <Row>
+                    <Row>
+                        <Col span={11}><ImgsProduct i={0} j={1}></ImgsProduct></Col>
+                        <Col offset={1} span={12} style={{width: '100%'}}><Panel></Panel></Col>
+                    </Row>
+                    <Row style={{width: '100%', marginTop: '20px'}}>
+                        <Col span={11}><ImgsProduct i={2} j={3}></ImgsProduct></Col>
+                        <Col span={13} style={{width: '100%'}}><CreditSection></CreditSection></Col>
+                    </Row>
+
                 </Row>
             </Row>
         </Row>
