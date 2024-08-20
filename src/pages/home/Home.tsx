@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ImgCarousel from "../../components/carousel/ImgCarousel";
 import Filters from "../../components/filters/Filters";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -12,10 +12,13 @@ import { getRealValue } from "../../utilities/getRealValue";
 import getScore from "../../utilities/getScore";
 import { sorters } from "../../utilities/sorterFunctions";
 import ProductOut from "../../components/products/ProductsOut";
+import { useSearchParams } from "react-router-dom";
 
 export default function Home(){
 
     const {data} = useContext(DataContext);
+
+    const [searchParams] = useSearchParams();
 
     const [searchText, setSearchText] = useState('');
 
@@ -28,6 +31,19 @@ export default function Home(){
     const [stars, setStars] = useState(-1);
 
     const [sorter, setSorter] = useState(0);
+
+    useEffect(
+      () => {
+        if(searchParams.get('category')){
+          const x = parseInt(searchParams.get('category'));
+          setCaterogy(x);
+        }
+        if(searchParams.get('manufacturer')){
+          const x =(searchParams.get('manufacturer'));
+          setMark(x);
+        }
+      }, []
+    )
 
     function filterData(): Product[]{
       let tmp_data: Product[] = data; 

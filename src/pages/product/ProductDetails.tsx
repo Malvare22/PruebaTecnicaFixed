@@ -2,16 +2,17 @@ import ReviewsScore from "../../components/reviews/ReviewsScore";
 import BuyProtect from "../../assets/img/buy_protect.png"
 import styles from "./ProductDetails.module.css"
 import { oldPriceStyle, priceStyle } from "../../components/productCard/ProductCard";
-import { Col, Image, Row, Tabs, TabsProps } from "antd";
+import { Col, Image, Row, Space, Tabs, TabsProps } from "antd";
 import { CreditSection, Taxes } from "../../components/taxes/Taxes";
 import { useContext, useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { Product } from "../../adapters/Product";
 import { getProductById } from "../../services/getProducts";
 import { ProductDetailContext } from "../../context/ProductDetailContext";
 import PreviewImg from "./components/PreviewImg/PreviewImg";
 import ImgsProduct from "./components/ImgsProduct/ImgsProduct";
 import Panel from "./components/Panel/Panel";
+import ProductBreadcrumb from "./components/Breadcrumb/ProductBreadcrumb";
 
 export default function ProductDetails(){
 
@@ -33,7 +34,17 @@ export default function ProductDetails(){
     if(!product) return<></>;
 
     return <ProductDetailContext.Provider value={product}>
-        <div className="container">
+        <Row className="container">
+            <Row style={{width : '100%', marginTop: '30px'}} align={'middle'}>
+                <>
+                    <Col span={3}><Row justify={'center'} align={'middle'} ><Link to={'/'} style={{color:'#707070', border: '#707070 1px solid', padding: '3%', marginLeft: '-20px'}}>Volver a resultados</Link></Row></Col>
+                    <Col span={10}>
+                        <Row align={'middle'}>
+                            <div><ProductBreadcrumb product={product}></ProductBreadcrumb></div>
+                        </Row>
+                    </Col>
+                </>
+            </Row>
             <Row>
                 {/* <Row className="sorterStyles">
                     <Col><div className="label">Volver a resultados</div></Col>
@@ -52,7 +63,7 @@ export default function ProductDetails(){
                     </Col>
                 </Row>
             </Row>
-        </div>
+        </Row>
     </ProductDetailContext.Provider>
 }
 
