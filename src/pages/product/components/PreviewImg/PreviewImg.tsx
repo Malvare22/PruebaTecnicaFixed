@@ -14,14 +14,16 @@ export const PreviewImg = () => {
 
     return <Row style={{height:'400px'}} align={"middle"}>
         <Col span={4}>
-            {
-                product?.img.map(
-                    (img, i) => <Row onClick={() => handleImg(i)}><img src={img} width={'100%'}></img></Row>
-                )
-            }
+            <Row gutter={[0 ,24]}>
+                {
+                    product?.img.map(
+                        (img, i) => <Row onClick={() => handleImg(i)}><img src={img} width={'100%'}></img></Row>
+                    )
+                }
+            </Row>
         </Col>
         <Col span={18}>
-            <img src={product?.img[selectImg]} style={{background: 'black', margin: 10}} width={'90%'} height={'100%'}></img>
+            <img src={product?.img[selectImg]} style={{background: 'black', margin: 10}} width={'100%'} height={'400px'}></img>
         </Col>
     </Row>;
 };

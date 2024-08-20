@@ -14,12 +14,12 @@ interface TaxesProps{
 }
 
 export const CreditSection = () => {
-    return <Row className={styles.creditContainer}>
+    return <div className={styles.creditContainer}>
         <div className={styles.layer1}><div><TaxesLayer1></TaxesLayer1></div></div>
         <div className={styles.layer2}><div><TaxesLayer2></TaxesLayer2></div></div>
         <Taxes></Taxes>
         <Letter></Letter>
-    </Row>;
+    </div>;
 };
 
 const Letter = () => {

@@ -13,6 +13,7 @@ import PreviewImg from "./components/PreviewImg/PreviewImg";
 import ImgsProduct from "./components/ImgsProduct/ImgsProduct";
 import Panel from "./components/Panel/Panel";
 import ProductBreadcrumb from "./components/Breadcrumb/ProductBreadcrumb";
+import CreditBanner from "./components/CreditBanner/CreditBanner";
 
 export default function ProductDetails(){
 
@@ -34,7 +35,7 @@ export default function ProductDetails(){
     if(!product) return<></>;
 
     return <ProductDetailContext.Provider value={product}>
-        <Row className="container">
+        <Row className="container" justify={'center'}>
             <Row style={{width : '100%', marginTop: '30px'}} align={'middle'}>
                 <>
                     <Col span={3}><Row justify={'center'} align={'middle'} ><Link to={'/'} style={{color:'#707070', border: '#707070 1px solid', padding: '3%', marginLeft: '-20px'}}>Volver a resultados</Link></Row></Col>
@@ -46,10 +47,6 @@ export default function ProductDetails(){
                 </>
             </Row>
             <Row>
-                {/* <Row className="sorterStyles">
-                    <Col><div className="label">Volver a resultados</div></Col>
-                    <Col><div>asdasdasd</div></Col>
-                </Row> */}
                 <Row>
                     <Col span={10}><PreviewImg></PreviewImg></Col>
                     <Col span={14}><GeneralInformation></GeneralInformation></Col>
@@ -57,9 +54,9 @@ export default function ProductDetails(){
                 <Row style={{color: '#2B3445', fontSize: '16px', fontWeight: 'bold', marginTop: '10px', marginBottom: '10px'}}>Información Detallada del Producto</Row>
                 <Row justify={'center'}>
                     <Col span={10}><ImgsProduct></ImgsProduct></Col>
-                    <Col span={14}>
-                        <Row><Panel></Panel></Row>
-                        {/* <Row><CreditSection></CreditSection></Row> */}
+                    <Col span={13} offset={1}>
+                        <Row justify={'center'} style={{width: '100%'}}><Panel></Panel></Row>
+                        <><CreditSection></CreditSection></>
                     </Col>
                 </Row>
             </Row>
@@ -70,27 +67,30 @@ export default function ProductDetails(){
 
 const GeneralInformation = () => {
     return<div style={{padding: 10}}>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <div>
-                <div style={{width: 260, fontSize: 24, color: '#2B3445'}}>Samsung A10S 13+2MP 64GB, 4GB RAM</div>
-                <div style={{marginTop: '10px', marginBottom: '10px'}}><ReviewsScore score={5}></ReviewsScore></div>
-            </div>
-            <div>
-                <div style={ {fontSize: '30px', color: '#004AC1', fontWeight: 'bolder'}}>$3,499</div>
-                <div style={{fontSize: '16px', marginTop: '-4px', color: '#7D879C', textAlign:'end', textDecorationLine: 'line-through'}}>$4,100</div>
-            </div>
-        </div>
-        <div className={styles.description}>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco....</div>
-            <div style={{color: '#004AC1', fontStyle: 'italic', marginTop: '6px'}}>- Ver más -</div>
-        </div>
-        <div className={styles.toRight}>
+        <Row justify={'space-between'}>
+            <Col>
+                <Col style={{width: 260, fontSize: 24, color: '#2B3445'}}>Samsung A10S 13+2MP 64GB, 4GB RAM</Col>
+                <Col style={{marginTop: '10px', marginBottom: '10px'}}><ReviewsScore score={5}></ReviewsScore></Col>
+            </Col>
+            <Col>
+                <Col style={ {fontSize: '30px', color: '#004AC1', fontWeight: 'bolder'}}>$3,499</Col>
+                <Col style={{fontSize: '16px', marginTop: '-4px', color: '#7D879C', textAlign:'end', textDecorationLine: 'line-through'}}>$4,100</Col>
+            </Col>
+        </Row>
+        <Row className={styles.description}>
+            <Row>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco....</Row>
+            <Row style={{color: '#004AC1', fontStyle: 'italic', marginTop: '6px'}}>- Ver más -</Row>
+        </Row>
+        <Row justify={'end'}>
             <div style={{marginBottom: '10px'}}><img src={BuyProtect} width={300}></img></div>
+        </Row>
+        <Row justify={'end'}>
             <div style={{fontSize: 10, color: '#E6406D'}}>La promoción vence en 24d 12h:43m</div>
-        </div>
-        <div>
-            <img></img>
-        </div>
+
+        </Row>
+        <Row>
+            <CreditBanner></CreditBanner>
+        </Row>
 
     </div>;
 }

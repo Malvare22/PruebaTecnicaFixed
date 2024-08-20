@@ -14,63 +14,54 @@ const Panel = () => {
         {
           key: '1',
           label: 'Otras Especificaciones',
-          children: <div className={styles.panel}>
-            <Row>
+          children: <>
+            <Row justify={'center'} className={styles.panel}>
                 <Col span={6} className={styles.panelLabel}>Fabricante</Col>
                 <Col span={18}>{product.manufacturer}</Col>
-            </Row>
-            <Row>
+            
                 <Col span={6}  className={styles.panelLabel}>Peso del Producto</Col>
                 <Col span={18}>{product.weight}</Col>
-            </Row>
-            <Row>
+       
                 <Col span={6}  className={styles.panelLabel}>Dimensiones</Col>
                 <Col span={18}>{product.dimensions}</Col>
-            </Row>
-            <Row>
+       
                 <Col span={6}  className={styles.panelLabel}>País de Origen</Col>
                 <Col span={18}>{product.countryOfOrigin}</Col>
-            </Row>
-            <Row>
+          
                 <Col span={6}  className={styles.panelLabel}>Número de modelo</Col>
                 <Col span={18}>{product.modelNumber}</Col>
-            </Row>
-            <Row>
+           
                 <Col span={6}  className={styles.panelLabel}>Color</Col>
                 <Col span={18}>{product.color}</Col>
-            </Row>
-            <Row>
+           
                 <Col span={6}  className={styles.panelLabel}>Material</Col>
                 <Col span={18}>{product.material}</Col>
-            </Row>
-            <Row>
+           
                 <Col span={6}  className={styles.panelLabel}>Cantidad de piezas</Col>
                 <Col span={18}>{product.numberOfPieces}</Col>
-            </Row>
-            <Row>
+          
                 <Col span={6}  className={styles.panelLabel}>Características especiales</Col>
                 <Col span={18}>{product.specialFeatures}</Col>
-            </Row>
-            <Row>
+            
                 <Col span={6}  className={styles.panelLabel}>Componentes incluidos</Col>
                 <Col span={18}>{product.componentsIncluded}</Col>
             </Row>
-          </div>
+          </>
         },
         {
           key: '2',
           label: `Reviews (${product.reviews.length})`,
-          children: <>
+          children: <Row justify={'center'}>
             {product.reviews.map(
-                (review) => <Review user={review.reviewer} score={review.rating} comment={review.comment}></Review>
+                (review) => <Col span={24}><Review user={review.reviewer} score={review.rating} comment={review.comment}></Review></Col>
             )}
-          </>
+          </Row>
         }
       ];
 
-    return <Col span={16} offset={1} style={{height: 380, overflowY:'auto'}}>
+    return <Row style={{height: 400, overflowY:'auto'}}>
         <Tabs defaultActiveKey="1" items={items}/>
-    </Col>;
+    </Row>;
 };
 
 export default Panel;

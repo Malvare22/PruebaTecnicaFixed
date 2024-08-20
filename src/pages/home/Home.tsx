@@ -35,7 +35,8 @@ export default function Home(){
     useEffect(
       () => {
         if(searchParams.get('category')){
-          const x = parseInt(searchParams.get('category'));
+
+          const x =(searchParams.get('category') == 'phone') ? 1 : 2;
           setCaterogy(x);
         }
         if(searchParams.get('manufacturer')){
