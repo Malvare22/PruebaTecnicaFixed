@@ -1,40 +1,47 @@
 import styles from './Header.module.css'
 import CSS from "csstype";
 import Logo from '../../assets/svg/Logotipo-Macropay.svg'
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row, Space } from 'antd';
 import { Cart } from '../../assets/svg/header/Cart';
 
 
 function Header() {
 
     return (
-    <div>
-        <Row className={styles.bg}>
-            <Row className={styles.container}>
-                <Col className={styles.logoContainer}><img src={Logo}></img></Col>
-                <Col className={styles.btnsContainer}>
-                    <div className={styles.btns}>
-                        <Button className={'yellowButton'}>Crea Tu Cuenta</Button>
-                        <Button className={styles.btn2}>Iniciar Sesión</Button>
-                        <div className={styles.iconContainer}>
-                            <Cart className={styles.icon}></Cart>
-                        </div>
-                    </div>
-                    {/* <div className={styles.circleContainer}>
+    <Row>
+        <Row className={styles.bg} align={'middle'}>
+            <Col offset={1} span={12} className={styles.logoContainer}><img src={Logo}></img></Col>
+            <Col span={11} className={styles.btnsContainer}>
+                <Row>
+                    <Col offset={3}>
+                        <Space>
+                            <Col><Button className={'yellowButton'}>Crea Tu Cuenta</Button></Col>
+                            <Col><Button className={styles.btn2}>Iniciar Sesión</Button></Col>
+                            <Col>
+                                <Row className={styles.iconContainer} justify={'center'} align={'middle'}>
+                                    <Cart className={styles.icon}></Cart>
+                                </Row>
+                            </Col>
+                        </Space>
+                    </Col>
+                    <Col span={7} className={styles.circleContainer}>
                         <div className={styles.circle}>
-                            <div className={styles.circleText}>
-                                <h2>COMPRA A CRÉDITO</h2>
-                            </div>
+                            <h3>COMPRA A</h3>
+                            <h2>CRÉDITO</h2>
                         </div>
-                    </div> */}
-                </Col>
+                    </Col>
+                </Row>
+            </Col>
             </Row>
+        <Row className={styles.menu} align={'middle'}>
+            <Col offset={1}>
+                <MenuOption label='Home'></MenuOption>
+            </Col>
+            <Col offset={1}>
+                <MenuOption label='Celulares'></MenuOption>
+            </Col>
         </Row>
-        <Row className={styles.menu}>
-            <MenuOption label='Home'></MenuOption>
-            <MenuOption label='Celulares'></MenuOption>
-        </Row>
-    </div>
+    </Row>
     )
   }
 

@@ -1,31 +1,21 @@
 .bg{
     background: #004AC1;
-    height: 100px;
     width: 100%;
-    display: flex;
-    align-items: center;
+    height: 90px;
 }
 
 .logoContainer{
     padding-left: 20px;
 }
 
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-}
-
 .btnsContainer{
-    display: flex;
-    
+    button{
+        height: 50px;
+    }
 }
 
 .btns{
-    display: flex;
-    align-items: center;
+
     > *{
         margin: 10px;
     };
@@ -52,54 +42,56 @@
 
 .iconContainer{
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 42px;
     height: 42px;
     border-radius: 50%;
 }
 
+
 .circleContainer{
-    width: 200px;
-    height: 60px;
     position: relative;
 }
 
 .circle{
     background-color: #D2AE00;
+    position: absolute;
+    right: -100px;
+    top: -60px;
     width: 220px;
     height: 220px;
     border-radius: 50%;
     color: white;
-    position: absolute;
-    bottom: -70px;
-    left: 20px;
-    
-}
-
-.circleText{
-    > h2{
+    h2{
         transform: rotate(40deg);
         position: absolute;
-        bottom: 0px;
+        bottom: 60px;
+        font-size: 30px;
+        font-weight: normal;
+        left: 14px;
     }
+    h3{
+        transform: rotate(40deg);
+        position: absolute;
+        font-weight: normal;
+        font-size: 20px;
+        bottom: 90px;
+        left: 45px;
+    }
+    
 }
 
 .menu{
     background-color: #FFFFFF;
     height: 50px;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
+    width: 100%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
 
 .menuOption{
     font-family: 'Open Sans';
+    margin-left: 16px;
     color: #2B3445;
-    margin-right: 40px;
 }
 
 .menuOption:hover{

@@ -38,7 +38,7 @@ function App() {
     <DataContext.Provider value={{data, modalProduct, setModalProduct, openModal, setOpenModal}}>
       <ProductModal></ProductModal>
       <Header></Header>
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       {/* <Footer></Footer> */}
     </DataContext.Provider>
     </>
