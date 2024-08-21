@@ -4,6 +4,7 @@ import Man from '../../assets/img/buying.png';
 import './Modal.css'
 import { Check } from '../../assets/svg/Check';
 import { DataContext } from '../../context/DataContext';
+import { getRealValue } from '../../utilities/getRealValue';
 
 
 const ProductModal = () => {
@@ -33,7 +34,7 @@ const ProductModal = () => {
             <img src={modalProduct.img[0]} width={'120px'} height={'140px'}></img>
           </div>
           <div style={{paddingLeft: '20px', width: '300px'}}>
-            <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>${modalProduct?.price} x 1</div>
+            <div style={{color: '#004AC1', fontSize: '16px', fontWeight:'bold', textAlign:'end'}}>${getRealValue(modalProduct)} x 1</div>
             <div style={{color: '#2B3445', fontSize: '16px', fontWeight:'bold', width:'60%'}}>{modalProduct?.name}</div>
             <div style={{color: '#7D879C', fontSize: '14px', fontWeight:'bold'}}>Color seleccionado: {modalProduct?.color}</div>
           </div>
@@ -42,7 +43,7 @@ const ProductModal = () => {
           <div style={{color: '#7D879C', fontSize:'16px', fontWeight:'bolder'}}>1 ítem en tu carrito</div>
           <div style={{display: 'flex', alignContent: 'center'}}>
             <div style={{color: '#7D879C', fontSize:'16px', fontWeight:'bolder'}}>Subtotal</div>
-            <div style={{color: '#004AC1', fontSize:'16px', fontWeight:'bolder', marginLeft:'10px'}}>${modalProduct?.price}</div>
+            <div style={{color: '#004AC1', fontSize:'16px', fontWeight:'bolder', marginLeft:'10px'}}>${getRealValue(modalProduct)}</div>
           </div>
         </div>
         <div className='rows'>
