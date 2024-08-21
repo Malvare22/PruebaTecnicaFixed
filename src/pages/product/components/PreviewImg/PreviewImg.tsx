@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ProductDetailContext } from "../../../../context/ProductDetailContext";
 import { Col, Row } from "antd";
+import { LikeFrame } from "../../../../components/like/Like";
 
 export const PreviewImg = () => {
 
@@ -22,8 +23,11 @@ export const PreviewImg = () => {
                 }
             </Row>
         </Col>
-        <Col span={18}>
-            <img src={product?.img[selectImg]} style={{background: 'black', margin: 10}} width={'100%'} height={'400px'}></img>
+        <Col offset={1} span={17}>
+            <div style={{width: '100%', height: '400px'}}>
+            <LikeFrame product={product} height="400px"></LikeFrame>
+            </div>
+            {/* <img src={product?.img[selectImg]} style={{background: 'black', margin: 10}} width={'100%'} height={'400px'}></img> */}
         </Col>
     </Row>;
 };

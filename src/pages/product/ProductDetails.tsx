@@ -36,7 +36,7 @@ export default function ProductDetails(){
 
     return <ProductDetailContext.Provider value={product}>
         <Row className="container" justify={'center'}>
-            <Row style={{width : '100%', marginTop: '30px'}} align={'middle'}>
+            <Row style={{width : '100%', marginTop: '30px', marginBottom: '20px'}} align={'middle'}>
                 <>
                     <Col span={3}><Row justify={'center'} align={'middle'} ><Link to={'/'} style={{color:'#707070', border: '#707070 1px solid', padding: '3%', marginLeft: '-20px'}}>Volver a resultados</Link></Row></Col>
                     <Col span={10}>
