@@ -37,9 +37,11 @@ export default function Home(){
     useEffect(
       () => {
         if(url_category){
-
           const x =(url_category == 'phone') ? 1 : 2;
           setCaterogy(x);
+        }
+        else{
+          setCaterogy(0);
         }
         if(searchParams.get('manufacturer')){
           const x =(searchParams.get('manufacturer'));
