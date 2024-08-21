@@ -17,3 +17,14 @@
     font-weight: bold;
     color: #2B3445;
 }
+
+.cardsContainer{
+    display: flex;
+    margin-top: 10px;
+    svg{
+        margin-left: 10px;
+        fill: #B4B4B4;
+        width: 24px;
+        height: 24px;
+    }
+}

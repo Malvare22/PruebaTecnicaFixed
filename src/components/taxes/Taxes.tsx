@@ -1,24 +1,22 @@
 import { Button, Card, Col, InputNumber, Row, Slider, Switch } from 'antd';
 import styles from './Taxes.module.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Product } from '../../adapters/Product';
 import { HappyFace } from '../../assets/svg/Happyface';
 import TaxesLayer1 from '../../assets/svg/productDetail/TaxesLayer1';
 import TaxesLayer2 from '../../assets/svg/productDetail/TaxesLayer2';
 import { Check } from '../../assets/svg/Check';
+import { getRealValue } from '../../utilities/getRealValue';
+import { getPercentage } from '../../utilities/getPercentage';
+import { ProductDetailContext } from '../../context/ProductDetailContext';
 
 const formatter = (value?: number | undefined) => `${value}%`;
 
-interface TaxesProps{
-    product?: Product
-}
-
 export const CreditSection = () => {
     return <div className={styles.creditContainer}>
-        <div className={styles.layer1}><div><TaxesLayer1></TaxesLayer1></div></div>
-        <div className={styles.layer2}><div><TaxesLayer2></TaxesLayer2></div></div>
-        {/* <Taxes></Taxes>
-        <Letter></Letter> */}
+        
+        <Taxes></Taxes>
+        <Letter></Letter>
     </div>;
 };
 
@@ -43,15 +41,20 @@ const LetterIl: React.FC<LetterIlProps> = ({text}) => {
 }
 
 
-export const Taxes:React.FC<TaxesProps> = ({product}) => {
+export const Taxes = () => {
+
+    const product = useContext(ProductDetailContext);
 
     const [inputValue, setInputValue] = useState(15);
     const onChange = (newValue: number) => {
         setInputValue(newValue);
     };
-    // const getValue = () => {
-    //     return getPercentage(product['price'], inputValue);
-    // }
+
+    console.log(product)
+
+    const getValue = () => {
+        return getPercentage(product?.price, inputValue);
+    }
 
     return <>
         <Card className={styles.calculate}>
@@ -59,8 +62,8 @@ export const Taxes:React.FC<TaxesProps> = ({product}) => {
                 <div className={styles.smile_face}><HappyFace></HappyFace></div>
             </div>
             <div className={styles.tittle}>¿Te falta una lanita?</div>
-            {/* <div className={styles.price}>PAGO SEMANAL ${Math.ceil(getValue()/4)}</div>
-            <div className={styles.price}>ENGANCHE ${getValue()}</div> */}
+            <div className={styles.price}>PAGO SEMANAL ${Math.ceil(getValue()/4)}</div>
+            <div className={styles.price}>ENGANCHE ${getValue()}</div>
             <div className={styles.slice}>
                 <Slider value={inputValue} onChange={onChange} tooltip={{
                     formatter,

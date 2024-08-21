@@ -1,7 +1,6 @@
 import ReviewsScore from "../../components/reviews/ReviewsScore";
 import BuyProtect from "../../assets/img/buy_protect.png"
 import styles from "./ProductDetails.module.css"
-import { oldPriceStyle, priceStyle } from "../../components/productCard/ProductCard";
 import { Col, Image, Row, Space, Tabs, TabsProps } from "antd";
 import { CreditSection, Taxes } from "../../components/taxes/Taxes";
 import { useContext, useEffect, useState } from "react";
@@ -14,6 +13,15 @@ import ImgsProduct from "./components/ImgsProduct/ImgsProduct";
 import Panel from "./components/Panel/Panel";
 import ProductBreadcrumb from "./components/Breadcrumb/ProductBreadcrumb";
 import CreditBanner from "./components/CreditBanner/CreditBanner";
+import ProductOut from "../../components/products/ProductsOut";
+import CreditCard01 from "../../assets/svg/productDetail/CreditCard01";
+import CreditCard02 from "../../assets/svg/productDetail/CreditCard02";
+import CreditCard03 from "../../assets/svg/productDetail/CreditCard03";
+import CreditCard04 from "../../assets/svg/productDetail/CreditCard04";
+import getScore from "../../utilities/getScore";
+import { getRealValue } from "../../utilities/getRealValue";
+
+
 
 export default function ProductDetails(){
 
@@ -65,24 +73,36 @@ export default function ProductDetails(){
                 </Row>
             </Row>
         </Row>
+        <Row style={{marginTop: '30px', marginBottom: '50px'}}>
+            <ProductOut tittle="Productos Relacionados"></ProductOut>
+        </Row>
     </ProductDetailContext.Provider>
 }
 
 
 const GeneralInformation = () => {
+
+    const product = useContext(ProductDetailContext);
+
     return<div style={{padding: 10}}>
         <Row justify={'space-between'}>
             <Col>
-                <Col style={{width: 260, fontSize: 24, color: '#2B3445'}}>Samsung A10S 13+2MP 64GB, 4GB RAM</Col>
-                <Col style={{marginTop: '10px', marginBottom: '10px'}}><ReviewsScore score={5}></ReviewsScore></Col>
+                <Row style={{width: 260, fontSize: 24, color: '#2B3445'}}>{product?.name}</Row>
+                <Row style={{marginTop: '10px', marginBottom: '10px'}}><ReviewsScore score={getScore(product?.reviews)}></ReviewsScore></Row>
             </Col>
             <Col>
-                <Col style={ {fontSize: '30px', color: '#004AC1', fontWeight: 'bolder'}}>$3,499</Col>
-                <Col style={{fontSize: '16px', marginTop: '-4px', color: '#7D879C', textAlign:'end', textDecorationLine: 'line-through'}}>$4,100</Col>
+                <div style={ {fontSize: '30px', color: '#004AC1', fontWeight: 'bolder', display: 'flex', justifyContent: 'end'}}>${getRealValue(product)}</div>
+                <div style={{width: '100%', fontSize: '16px', marginTop: '-4px', color: '#7D879C', textAlign:'end', textDecorationLine: 'line-through'}}>{product?.price}</div>
+                <div className={styles.cardsContainer}>
+                    <CreditCard01></CreditCard01>
+                    <CreditCard02></CreditCard02>
+                    <CreditCard03></CreditCard03>
+                    <CreditCard04></CreditCard04>
+                </div>
             </Col>
         </Row>
         <Row className={styles.description}>
-            <Row>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco....</Row>
+            <Row>{product?.description}</Row>
             <Row style={{color: '#004AC1', fontStyle: 'italic', marginTop: '6px'}}>- Ver más -</Row>
         </Row>
         <Row justify={'end'}>
