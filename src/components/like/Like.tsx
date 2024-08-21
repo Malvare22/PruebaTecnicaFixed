@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Heart } from "../../assets/svg/Heart";
 import { HeartFill } from "../../assets/svg/HeartFill";
 import styles from './Like.module.css'
 import { Product } from "../../adapters/Product";
-import { json } from "react-router-dom";
+import { json, useActionData } from "react-router-dom";
+import { FiltersContext } from "../../context/FiltersContext";
 
 interface LikeFrameProps{
     product: Product,
@@ -15,11 +16,23 @@ export const LikeFrame: React.FC<LikeFrameProps> = ({product, height, imgIndex =
 
     const [liked, setLiked] = useState(false);
 
-    useEffect(
-        () => {
-            readLike();
-        }, []
-    )
+    if(useContext(FiltersContext)){
+        
+        const {buffer} = useContext(FiltersContext);
+
+        useEffect(
+            () => {
+                readLike();
+            }, [buffer]
+        )
+    }
+    else{
+        useEffect(
+            () => {
+                readLike();
+            }, []
+        )
+    }
 
     const readLike =  () => {
         let x : any = localStorage.getItem('like')
