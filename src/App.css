@@ -1,7 +1,6 @@
 #root, body {
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 *{
@@ -56,16 +55,6 @@ body{
   background-color: #FFD300;
   color: #004AC1;
 
-}
-
-.cardsContainer{
-  height: 600px;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: -14px;
-  margin-left: 14px;
 }
 
 

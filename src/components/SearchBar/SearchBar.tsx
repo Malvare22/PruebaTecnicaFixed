@@ -45,7 +45,7 @@ function SearchBar() {
 
   return (
     <>
-      <div className="searchBarStyles" style={{display: 'flex', alignItems: 'center', marginLeft: '30px'}}>
+      <div className="searchBarStyles" style={{display: 'flex', alignItems: 'center'}}>
         <div className="input"><Search placeholder="Encuentra el producto que necesitas" onChange={handleInput}/></div>
         <div className="dropMenu">
           <Dropdown menu={{ items }}>

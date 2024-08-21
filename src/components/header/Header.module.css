@@ -2,6 +2,7 @@
     background: #004AC1;
     width: 100%;
     height: 90px;
+
 }
 
 .logoContainer{
@@ -47,15 +48,10 @@
     border-radius: 50%;
 }
 
-
-.circleContainer{
-    position: relative;
-}
-
 .circle{
     background-color: #D2AE00;
     position: absolute;
-    right: -100px;
+    right: -60px;
     top: -60px;
     width: 220px;
     height: 220px;

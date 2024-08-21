@@ -13,6 +13,7 @@ import getScore from "../../utilities/getScore";
 import { sorters } from "../../utilities/sorterFunctions";
 import ProductOut from "../../components/products/ProductsOut";
 import { useSearchParams } from "react-router-dom";
+import { Col, Row } from "antd";
 
 export default function Home(){
 
@@ -91,22 +92,21 @@ export default function Home(){
     };
 
     return <FiltersContext.Provider value={{searchText, setSearchText, category, setCaterogy, mark, setMark, price, setPrice, stars, setStars, sorter, setSorter, buffer: filterData()}}>
-      <div style={{display: 'flex', marginRight: '0px', marginLeft: '40px', marginTop: '30px', marginBottom: '30px'}}>
-        <Sorter></Sorter>
-        <SearchBar></SearchBar>
-      </div>
-      <div style={{display: 'flex', alignContent: 'center'}}>
-        <div style={{marginLeft: '40px'}}>
-          <Filters></Filters>
-        </div>
-        <div className='cardsContainer'>
-          {filterData().map(
-            (product, key) => <ProductCard product={product} key={key}/>
-          )}
-          {/* <ProductCard></ProductCard> */}
-          
-        </div>
-      </div>
+      <Row justify={'start'} style={{marginTop: '20px', marginBottom: '10px'}}>
+        <Col offset={1} span={6}><Sorter></Sorter></Col>
+        <Col span={16} offset={1}><SearchBar></SearchBar></Col>
+      </Row>
+      <Row justify={'start'} style={{marginTop: '20px', marginBottom: '40px'}}>
+          <Col offset={1} span={6}><Filters></Filters></Col>
+          <Col span={16} offset={1} style={{height: '600px', overflowY: 'auto'}}>
+            <Row>
+              {filterData().map(
+                (product, key) => <Col span={7} style={{margin: '10px', marginTop: 0, marginLeft: key%3 != 0? '10px': '0px'}}><ProductCard product={product} key={key}/></Col>
+              )}      
+            </Row>
+
+          </Col>
+      </Row>
       <div className='space'>
         <div style={{color: '#2B3445', fontWeight: 'bold', textAlign: 'center'}}>Ofertas y Promociones</div>
         <div>

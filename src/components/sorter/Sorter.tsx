@@ -1,4 +1,4 @@
-import { Cascader, Dropdown, Input, Space } from "antd"
+import { Cascader, Col, Dropdown, Input, Row, Space } from "antd"
 import type { GetProps, MenuProps } from 'antd';
 import './Sorter.css'
 import { useContext, useState } from "react";
@@ -48,18 +48,20 @@ function Sorter() {
 
   return (
     <>
-      <div className="sorterStyles" style={{display: 'flex', alignItems: 'center', alignContent: 'center'}}>
-        <div className="label">Ordenar por</div>
-        <div className="dropMenu">
+      <Row style={{width: '100%'}} align={'middle'} className="sorterStyles">
+        <Col span={12} className="label">Ordenar por</Col>
+        <Col span={12} className="dropMenu">
           <Dropdown menu={{ items }}>
+            <div>
             <a onClick={(e) => e.preventDefault()}>
               <Space>
                 <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center'}}><div style={{marginRight: '10px'}}>{tags[sorter]}</div><CompactDown></CompactDown></div>
               </Space>
             </a>
+            </div>
           </Dropdown>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </>
   )
 }

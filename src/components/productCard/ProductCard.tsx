@@ -28,16 +28,9 @@ const ProductCard:  React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <>
-        <Card style={{ width: '16rem', margin: 16, height: 480, borderRadius: '20px' }} className="productCard">
+        <Card style={{ width: '100%', height: 480, borderRadius: '20px' }} className="productCard">
             <div style={{display: 'flex', justifyContent: 'center', padding: 10}}>
-              <LikeFrame product={product} height="300px"></LikeFrame>
-                {/* <div className="frame" style={{ width: "95%", height:330}}>
-                  <div className="circle">{product.discount}%</div>
-                  <div className="like"><Like></Like></div>
-                  <img className="img" src={(product.img)[0]} style={{ width: "100%", height:330}}></img>
-                </div> */}
-                
-                
+              <LikeFrame product={product} height="300px"></LikeFrame>           
             </div>
             <div style={{padding: '0px 16px 10px 16px'}}>
               <div style={{display:'flex', justifyContent: 'space-between'}}>

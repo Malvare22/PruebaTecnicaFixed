@@ -11,8 +11,8 @@ function Header() {
     return (
     <Row>
         <Row className={styles.bg} align={'middle'}>
-            <Col offset={1} span={12} className={styles.logoContainer}><img src={Logo}></img></Col>
-            <Col span={11} className={styles.btnsContainer}>
+            <Col offset={1} span={7} className={styles.logoContainer}><img src={Logo}></img></Col>
+            <Col span={10} offset={5} className={styles.btnsContainer}>
                 <Row>
                     <Col offset={3}>
                         <Space>
@@ -25,15 +25,14 @@ function Header() {
                             </Col>
                         </Space>
                     </Col>
-                    <Col span={7} className={styles.circleContainer}>
-                        <div className={styles.circle}>
-                            <h3>COMPRA A</h3>
-                            <h2>CRÉDITO</h2>
-                        </div>
-                    </Col>
+                    
                 </Row>
             </Col>
-            </Row>
+            <div className={styles.circle}>
+                <h3>COMPRA A</h3>
+                <h2>CRÉDITO</h2>
+            </div>
+        </Row>
         <Row className={styles.menu} align={'middle'}>
             <Col offset={1}>
                 <MenuOption label='Home' redirect='/'></MenuOption>

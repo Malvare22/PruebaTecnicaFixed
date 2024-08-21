@@ -4,6 +4,7 @@ import style from './ProductsOut.module.css'
 import { DataContext } from '../../context/DataContext';
 import { Product } from '../../adapters/Product';
 import { sorters } from '../../utilities/sorterFunctions';
+import { Col, Row } from 'antd';
 
 interface ProductOutProps{
     tittle: string,
@@ -21,16 +22,16 @@ const ProductOut: React.FC<ProductOutProps> = ({tittle}) => {
     }
 
     return <>
-    <div>
-        <div className={style.tittle}>{tittle}</div>
-        <div className={style.cardsContainer}>
+    <Row justify={'center'} align={'middle'}>
+        <Row justify={'center'} align={'middle'} className={style.tittle}>{tittle}</Row>
+        <Row justify={'center'} align={'middle'}>
         {
             buffer().map(
-                (p, i) => <ProductCard product={p} key={i}></ProductCard>
+                (p, i) => <Col span={5} style={{padding: '10px'}}><ProductCard product={p} key={i}></ProductCard></Col>
             )
         }
-        </div>
-    </div>
+        </Row>
+    </Row>
     </>
 }
 
