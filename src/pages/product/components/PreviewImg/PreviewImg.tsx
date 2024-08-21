@@ -25,7 +25,7 @@ export const PreviewImg = () => {
         </Col>
         <Col offset={1} span={17}>
             <div style={{width: '100%', height: '400px'}}>
-            <LikeFrame product={product} height="400px"></LikeFrame>
+            <LikeFrame product={product} height="400px" imgIndex={selectImg}></LikeFrame>
             </div>
             {/* <img src={product?.img[selectImg]} style={{background: 'black', margin: 10}} width={'100%'} height={'400px'}></img> */}
         </Col>

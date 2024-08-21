@@ -7,10 +7,11 @@ import { json } from "react-router-dom";
 
 interface LikeFrameProps{
     product: Product,
-    height: string
+    height: string,
+    imgIndex?: number
 }
 
-export const LikeFrame: React.FC<LikeFrameProps> = ({product, height}) => {
+export const LikeFrame: React.FC<LikeFrameProps> = ({product, height, imgIndex = 0}) => {
 
     const [liked, setLiked] = useState(false);
 
@@ -53,7 +54,7 @@ export const LikeFrame: React.FC<LikeFrameProps> = ({product, height}) => {
             <div className={styles.like}>
                 <div className={(liked ? styles.likes : styles.unlikes) + ' ' + styles.container} onClick={() => writeLike()}>{liked ? <HeartFill/> : <Heart/>}</div>
             </div>
-            <img className={styles.img} src={(product.img)[0]} style={{ width: "100%", height:'100%'}}></img>
+            <img className={styles.img} src={(product.img)[imgIndex]} style={{ width: "100%", height:'100%'}}></img>
         </div>
     </>;
 }
