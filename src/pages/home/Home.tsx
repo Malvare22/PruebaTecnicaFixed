@@ -20,6 +20,8 @@ export default function Home(){
 
     const [searchParams] = useSearchParams();
 
+    const url_category = searchParams.get('category');
+
     const [searchText, setSearchText] = useState('');
 
     const [category, setCaterogy] = useState(0);
@@ -34,16 +36,16 @@ export default function Home(){
 
     useEffect(
       () => {
-        if(searchParams.get('category')){
+        if(url_category){
 
-          const x =(searchParams.get('category') == 'phone') ? 1 : 2;
+          const x =(url_category == 'phone') ? 1 : 2;
           setCaterogy(x);
         }
         if(searchParams.get('manufacturer')){
           const x =(searchParams.get('manufacturer'));
           setMark(x);
         }
-      }, []
+      }, [url_category]
     )
 
     function filterData(): Product[]{

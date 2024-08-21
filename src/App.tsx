@@ -14,11 +14,11 @@ import ProductDetails from './pages/product/ProductDetails'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <><Header></Header><Home /><Footer></Footer></>,
   },
   {
     path: "product",
-    element: <ProductDetails></ProductDetails>,
+    element: <><Header></Header><ProductDetails></ProductDetails><Footer></Footer></>,
   },
 ]);
 
@@ -37,9 +37,7 @@ function App() {
   return (<>
     <DataContext.Provider value={{data, modalProduct, setModalProduct, openModal, setOpenModal}}>
       <ProductModal></ProductModal>
-      <Header></Header>
       <RouterProvider router={router} />
-      <Footer></Footer>
     </DataContext.Provider>
     </>
   )

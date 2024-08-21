@@ -3,6 +3,7 @@ import CSS from "csstype";
 import Logo from '../../assets/svg/Logotipo-Macropay.svg'
 import { Button, Col, Row, Space } from 'antd';
 import { Cart } from '../../assets/svg/header/Cart';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -35,10 +36,13 @@ function Header() {
             </Row>
         <Row className={styles.menu} align={'middle'}>
             <Col offset={1}>
-                <MenuOption label='Home'></MenuOption>
+                <MenuOption label='Home' redirect='/'></MenuOption>
             </Col>
             <Col offset={1}>
-                <MenuOption label='Celulares'></MenuOption>
+                <MenuOption label='Celulares' redirect='/?category=phone'></MenuOption>
+            </Col>
+            <Col offset={1}>
+                <MenuOption label='Motocicletas' redirect='?category=motorcycle'></MenuOption>
             </Col>
         </Row>
     </Row>
@@ -47,12 +51,12 @@ function Header() {
 
   interface MenuOptionProps{
     label: string;
-    redirect?: string
+    redirect: string
   }
 
   const MenuOption = ({label, redirect}: MenuOptionProps) => {
     return <>
-        <div className={styles.menuOption}>{label}</div>
+        <Link to={redirect} className={styles.menuOption}>{label}</Link>
     </>;
   };
   
